@@ -1,3 +1,18 @@
 
-2011/11/12
+2011/11/12 
+ There are three steps that msut be followed to use 
+ these classes about Reflection.
+
+   Step1. Obtain a java.lang.Class object!
+          that you want to manipulate.
+		  java.lang.CLass is used to represent classes and interfaces
+		  in a running Java program.
+		     One way of obtaining a Class object is to say:
+
+			     Class c  = Class.forName("java.lang.String");
+				 Class c  = int.class // to get the Class object for String
+				 Class c  = Integer.TYPE
+
+   Step2. Call the method on it!
+   Step3. Use the reflection API to manipulate the information.
 
