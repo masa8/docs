@@ -1,4 +1,698 @@
 
+2011/12/17 
+2011/12/03 
+ Me vs Myself
+   Me : is an object pronoun, which means that is refrs ot the 
+        person that the action of a verb is being done
+        or to which a preposition refers
+		   + They want me to study more.
+		   + Tell me a story
+		   + between you and me, he's right.
+		   + Carol wants to meet with John and me tmorrow.
+		   + The book was written entirely by me.
+
+   Myself : is a reflexive or stressed pronoun, which means that,
+            generally speaking, it should be used in conjunction 
+			with the subject pronoun I, not instead of the object 
+			pronoun me.
+
+ Just remember that myself can be reflexiveor emphatic.
+ Otherwise, you probably want to see me.
+
+ remind vs remember
+  + It remind me of that.
+  + I remmenber that
+
+  ***************
+
+  Is anyone from US Team on this call?
+  Is everyone from US Team on this call?
+   Shall we start.? 
+  This is masaya from tokyo.
+  He's another meeting. He will join us in 30 mins.
+  I may need to leave in the middle of the call.
+  I'm only available in 39mins
+  I'll have to leave in about 23 mins.
+  Thank you for taking the time to call in.
+  We appreciate the time and effort you have put into this.
+
+  Could you keep notes during this meeting and email them to us
+  afterwards?
+  John, would you please send out a summary of today's meeting
+  after it is over_
+  John, would you please send us the minuts of today's meeting.
+  I will take notes during the meeting and email them to you.
+
+  Please let me clarify the objective of this meeting.
+  I called this session to address the ABC issue.
+  I requested this meeting to talk about the AVB issure
+  The purpose of this meeting is to;
+  What we would like to get from meeting is to;
+  Could you explain it more simply?
+  Could you explain it in detail?
+  Please clarify: 
+  Would you summarize this problem for us?
+  I could't catch that.
+  I don't understand you point.
+
+  Sorry to interrupt, but I'd like to confirm what you just said.
+  Let me make sure that I understand what you said.
+
+  WOULD YOU HOLD ON A SECOND?? We would like to discuss this.
+  Please give us a few moments to discuss this among ourselves.
+  Let us talk about it among ourseleves.
+  Excuse us, we're going to discuss this in japanese
+  Thank you for waiting. we decided that;
+  Excuse us/me,
+
+  We will put the phone on mute while we dicuss this among ourselves
+  Does this make sense??..
+  Do you have any questions??
+  What do you think about this?
+  Would you comment on this?
+  Do you have any advice?
+  Do you have any comments form implementation of view?
+  We are fine with that.
+  That seems reasonable.
+  That makes sense.
+  It sounds 
+  good.
+  OH! We were hoping for a different answer.
+  I understand that you are tried to XXXX but,
+  That might work, but I'm afraind It's not a final resolution.
+  That is a good idea, but we need an officaial fix,
+  Not a work-around.
+  Kent, this is masaya, I have a question.
+  That's a good question. but I cannot answer it right now.
+  Let me look into it and I'll get back to you later.
+
+  I think we have fully discussed this issue.
+  Let's move no to the next subject.
+  Let's go on to the NExt subject since we don't have much time left.
+  I just joined.
+  I have to leave now but my colleagues will stay on the call.
+  Excuse me, but there's some noise on the line.
+  Would you repeat that, please?
+  Hello can you hear me?
+  OK I will do so. Sure I will do that
+
+  suggest vs recommend
+
+   He recommended this restaurant.
+   He suggested we took bus.
+
+   Can This be fixed?
+   This should be fixed
+   Can you give us an official fix?
+   Customers give us an official fix??A
+   Can you tell us when this will be fixed
+   What is your target date 
+   for this fix?
+   We neeed an offical fix by March 11th, Tokyo time.
+   can you give us an official fix by thursday morning march 28th, tokyo 
+   time? i guess that wouldbe wednsday evening in us
+   would you tell us what you need form us to fix this?
+   Are there any potential problems with this fix?
+   Have any problems been reported with this fix?
+
+  some vs any
+
+   IKURADEMO:
+    positive sentence      : any  (any amount of money would be appriciated)
+	negative sentence      :
+	interrogative sentence :
+
+   NANIMO NAI:
+    positive sentnece      :
+	negative sentence      ; any  (I dont know any of these people) 
+	interrogative sentence : 
+
+   IKURAKA:
+    positive sentnce       :
+	negative sentece       :
+	interrogative sentence : any  ( Is there any water in the tank? )
+
+	+---------------------XXXX--+
+	                       any
+  Are there any risks involeved with applying this fix?
+  Could you give us work-around, if you cannot fix it?
+  Can this be improved?
+  The customer requests functional enhancements so that the system
+  supports user names longer than 8 characters.
+  This may be working as designed but I think we should improve 
+  the product. Could you tell us exactly why this cannot be fixed?
+  Would you please tell us exactly what caused this problem?
+
+  Do you have enough information to analyze this problem?
+  Do you need any more data from the system?
+  Yes, we need the /etc/inetd.conf file.
+  Were you isolate the problem?
+  Could you identify the cause of the problem?
+  Did you fine anything wrong?
+  What causes the problem? What can be done to prevent it 
+  from happening again? 
+  What is the most recent status?
+  Could you please update the problem managiment
+  database with the current status?
+  This is not an urgent matter.
+  Would you please give me daily status?
+  Our current situation is..
+  Here is my updated information on this problem.
+  I have an update on the problem today.
+  This is under investigation.
+  I'd like you to send me the details by Friday the 30th
+  please send me the detail within 24 hours.
+  This is anurgent matter. We cannot wait until Kent comes back from
+  Vacation.
+  The system is going into productionon June 1st
+  We have to solve the problem by then.
+  The customer's test sytem will not be available until next week.
+  The customer has been experiencing this problem for
+  the post two weeks.
+  This issue has been reported to our Presidnet. 
+  who is going to visit with customer next Monday.
+  YOu have determined that this is a code defect. not a user error.
+  The problem must be fixed within 24 hours or data will be lost
+  I expected to see that all of the data would be updated to the 
+  server but it wann't.
+  This is a solid problem.
+  We canduplicate this problem without fail.
+  I tried to clarify this in the e-mail I sent Wednesday.
+  Did you get my e-mail ? Does it make sense?
+  We have not reached an agreement on this ye.
+  I spendt a great deal of time on this
+  Let me summarize today's points.
+     + We have agreed on three points :
+	   First, Second, and finlly..
+  OK Let'S summarize. we will give you detailed information
+   and you will give us AGC by Thursday the 9th.
+   The customer will we will another call on Friday the 10th
+   Would you sumarize today's call for us?
+   Could someone in the U.S. please send a summaryof today's 
+   meeting to all attendees?
+   Could you send me daily status until our next call?
+   Keep me informed Keep me posted Keep me updated.
+   Im working with the IBM staff at the customer site to resolve the
+    problem. and I'll keep you informed.
+	Let's wrap up this session. Let's wrap this up.
+   OKay,, 
+   does anyone have anything else??
+   NO?
+   All reight, 
+   Iguess we're done for this week.
+   Shall we schedule our next meeting for the same time next week.
+   Let's have our next call at 8:00am on Thursday, Septembe the 24th,
+   Tokyo time. I will let you konw if there is any change.
+   I will send you aninvitation. Would you send me the e-mail address
+   of the participants?
+   Would you please send the agenda for our next meeting to 
+   all of the participants in advance??
+   We are losing our conference room, so we have to go now.
+   I will not be available for the next call.
+   Unfortunately I won't be able to attend the next call.
+
+   We have scheduled the meeting for 8o'clock.
+
+   ---------------
+   One of the most frequently asked quextions about songwriting is:
+   "What's the difference between a songlyric and a poem?" 
+   The answer to this question can determine the ultimate success
+   of aspiring song lyricists.
+u
+   similar yet distinct art forms
+  
+   poets in the modern world don't enjoy the evated social status
+   they did a century or two ago.
+   wordworth, byron, keats and shelley were the rock stars of their time.
+   their poetic skills earned them adulation, celebrity and even a touch of
+   wealth.
+   these days, poems and poetry are sadly relagated to sparsely 
+   attended coffeehouse readings or the abscure pages of tiny litery 
+   managazine.
+
+   poetry : shi as one of the genres
+   poem   : shi itself.
+
+   on the other side of the proverbial coin, there are wonderful opportunite
+   es available indoday's music industry for talented poets who successfully
+   adapt their writing style to song lyric writing.
+
+   songs are the popular lyrical medium of our time.
+   that's where the status is.
+   that's where the money is.
+
+
+   Which leads to this question : Can poets successfully turn their 
+   talents to writing song lyrics?
+   Answer : For talented poets willing to adapt their writing styles 
+   to the craft fo lyric writing, the answer is definitely yes.
+
+    A poem:
+	      + designed to be read on the page
+          + can be dense in idea and structurally complex.
+		  + designed to connect with a reader.
+		  + stands alone without music
+ 	A lyric:
+	      + designed to be song by human and heard with music
+		  + needs to communicate with immediacy, clarity and focused impact
+          + designed to connect with a listener
+		  + must work well with the rhythm and structure of music.
+		  
+		  
+		  ++++++++++++++++++++++++++++++++
+
+   ----+------------*---------------> Time
+        Expect      Now
+    
+	positive sentence      : He is here yet.
+	negative sentence      : He is not here yet.
+	interrogative sentence : Is he here yet.?
+
+
+
+	
+
+   
+   2011/11/27 
+ lots of >>>> a lot of
+
+ many <>s
+ much ~~
+
+ posi     tive sentence	: lotsof/alotof
+ neg     ative sentence	: much/many
+ interlogative sentence	: much/many
+2011/11/26 
+ RCP :
+  It is architected so that its components could be used to build 
+  just about any client application. The minimal set of plugins 
+  nedded to build a rich client application is known as the RCP.
+
+  Application other than IDEs can be built using a subset of the platform.
+  Dynamic plugin modle,
+  UI
+  extension points
+  Layout and function of the workbench is under fine-grained control!
+   Application 
+    ----------------------------(*- org.eclipse.ui
+	----------------------------(*- org.elcipse.core.runtime
+	----any API deemed necessary(*- any.
+	:wq
+2011/11/26
+Best Practice:
+  + Leverage the common error message logging facility.
+
+ * 4 components of the format for common error messages
+  1) message id		provides a quick means to distinguish one message
+  2) message text	briefly describes the problem
+  3) explanation	includes the reason that the message was generated
+  4) action			suggets ways to resolve the problem.
+
+ * For error message shown in UI, do NOT show the ID,
+   But make it accessible.
+
+    UI error messages are intended for end users, NOT DEVELOPERS.
+	Therefore we should not intimidate end users with a 
+	cryptic message ID
+
+  * Log each ERROR message shown in the UI to a log file also.
+  * Show the message ID as the first item and make it a hyperlink to 
+    addtional information.
+  * For error messages shown in the problems view,
+    exploit the QuickFixfeature to offer sholution to users.
+	=> Since limited space is available in the problems view,
+	   for errors or warnings shown in that view, 
+	   we should exploit the QuickFix feature to offer solutions 
+	   to users where possble.
+
+ Tips and Trick
+   Forcus work effort on the errors frequently encounteredin typical user
+    scenarios.
+   Obtain a list of top PMRs form our support team, and address those 
+   errors as a first priority.
+Use the common structure of error messages to help users diagnose and
+recover from errors. This will increase user's self-sufficiency and 
+reduce suppooret costs for Eclipse-based products.
+
+Problem Description:
+ Across Eclipse base products, error messages are displayed inconsistently.
+ This inconsistency makes i t difficult for users to understand error
+ conditions, and to diagnose and recover from problems.
+Status Handling Best Prctices
+    serviceablility ------ supportability
+	        + feature
+			   *logging
+			   *notification
+ This paper will explain the best practices a developer should follow
+ to exploit this new framework appropriately using the IStatus class.
+
+ BASIC PRINCIPLE:
+ Top Ten Eclipse UI Guidelines
+   1. Use the Eclipse look and feel if extending or plugging into Eclipse.
+   2. Use common SWT controls to get What SWT offer for cross-platform
+      adapteability and accessibility
+   3. Be familiar with APIs for the UIs you are building
+   4. Use icons and graphics consistent with the Eclipse style, 
+       decorations, states, and quality
+   5. Understand the conventions of the OSs you are developing for.
+   6. Use understandable message to help the people recover from error 
+      conditions.
+   7. Don't initiate dialogs or wizard in a error state.
+   8. Use quick fix and quick assist mechanisms
+   9. Reserve time for "polish"
+
+New Status Dialog:
+ Main Concepts:
+  +Message 	This is the most important piece of info.
+  +Details  Sometime there is not enough place to display all necessary info
+  +Support  It is possible to place some contact form on the dialog.
+Requirements;
+ + shows list of the problems
+ + shows details of the problems
+ + shows view which helps user to handle or report the problems
+ ]]]]]]
+
+Eclipse
+ Context 
+  +The error manager framework must keep track of the context and
+   if the error handler decides toshow the error to the user.
+   the ErrorManagerFramework should use the appropriate UserInterface.
+   
+   ModalDialog Cont]ext
+   JobError Context
+   Wizard Context
+   Error Log Contxt
+  ERROR 		:SHOW
+  WARNING DO 	:DO NOT SHOW
+  INFORMATION	:DO NOT SHOW
+
+ HOW TO SHOW IT
+     MODAL DIALOG : SHOULD NOT USE
+	 * the user can glance in the result in the botton right corner,
+	   click on it to see the list of errors and click onan error to
+	   see a detail.
+     * The view shows the different errors from the log.
+	   The user can click on an error in the list to see more details.
+
+
+ Error Messages : UserInterface
+  There are three types of user interfaces that will present a message,
+  an error or a warning to a user. The three categories are
+   + Message that requires user's action NOW.
+   + Message that requires user's action that can be done LATER
+   + List of messages.
+
+   ]]
+ Status manager is the entry point for all statuses to be reported
+ in the user interface. Handlers are not intended to be used directly.
+ See the error
+  Its very important to distinguish between expected and unexpected error.
+  Chencked	<Exception>	
+  								+Expected by a DEVELOPER  (NW is NOT avail.)
+								+UnExpected  SHOULD NOT HAPPEN.
+  Unchecked	<RuntimeException>
+  								+Expected by all the developer 
+								+UnExpected  SHOULD NOT HAPPEN. (NPE)
+
+ POLICY: It is the responsibility of the fearure provider,
+                                     the product provider,
+									 company to decide what the action will 
+									 do.
+
+ Eclipse could still provide a 'show log' button that policy provider can
+  extend
+
+ Generally expected errors should come with idea HOW TO SLOVE THE PROBLEM
+ Platform UI Error Handling
+ ISSUE TO SOLVE:
+ This is the main issue to solve for the 4 customers.
+ + When an error occurs in the tooling,
+   Eclipse needs to provide a way for the users to:
+     + see what the error is
+	 + understand what it means to the them
+	 + how can they act on the error
+
+ The behavior for each is based on policies
+  + The feature who threw the error should have a chance
+     to handle the error and help the customer.
+  + The feature should have an idea about what the error
+    handler it to do.
+	  i.e. when there is an error opening a view should
+	       we shouw the error view or not.
+		   also do we prompt when the workbench layout
+		   be reset?
+  + The product that is installed can override all feature's 
+    behavior it ships and manage or delegate to them as appropriate.
+ There is a simple way to contribute a support area in the JFace.ErrorDialog
+ Its the ErrorSupportProvider which can be set in the JFace policy.
+ Because the default workbench handler uses a subclass of the ErrorDialog
+ for its dialog.
+ The default status handler
+ The platform supplies its own status handler implementaion
+ org.eclipse.ui.statushandlres.WorkbenchErrorHandler.
+ It respects all acceptable sytle. and a dialog based on the JFace
+ org.eclipse.jface.dialogs.ErrorDialog.
+ In order to log extra informationwith the use of the default logging 
+ mechanism, it is necessary to perform some additional steps.
+ The status manager provides you with an API that allows you to hook
+ into the mechanism.
+
+ Status handling is a facility that allows to introduce a custom way of 
+ showing problems in the Eclipse based applications to USERs.
+ The facility can be configured at both the application and the product
+ level. The handlers are respnsible for presenting problems by logging or
+ showing appropriate feedback to the user.
+ All status hanlders extend AbstractStatusHandler which requires each 
+ handler to implement handle(StatusAdapter status, int style).
+ This method handles statuses based on a handling style.]
+ The STYLE indicates HOW STSTUS handler should handle a status.
+   /*--------------*/
+   The runtime exception classes are exempted from compile-time
+   checking, since the compiler cannot establish that run-time exceptions
+   cannot occur.
+   In the classes that you design you should subclass Exception and throw
+   instances of it to signal any exceptional scenarios.
+   Doing so you will be explicitly signaling the CLIENTS OF YOUR CLASS
+   that usage of your class maight throw exception and they have to 
+   take step to handle those exceptional scenarios.
+   In java, there are two types of exceptions :
+     + checked ceptions   	: Must be handled by the code.
+	 + un-checked exceptions	: Does Not Need to be handled.
+
+   Any exception that derives from Exception is a CHECKED exception.
+   RuntimeException is UN-CHECKED.
+   Someone please explain the difference between java.lang.RuntimeExcep
+   tion and java.lang.Exception How do I decide which one to extend 
+   if I create my own exception??
+   If you check for null before calling any method, NPE would never occur.
+
+								Catch
+  java.lang.Exception			Need	
+  java.lang.RuntimeException	NoNeed ]]]Can be prevented programmatically
+  java.lang.Throwable
+  java.lang.Error
+ /*--------------------*/
+
+ I will be leaving soon.
+ How long will you be staying in Japan?
+ What will you be doing tomorrow night about this time?
+ At that time, I will be working hard.
+
+ I will be leaving soon 
+ Will you be staying in this evening??
+ Are you going to stay in this evening
+ Will you stay in this evening?
+ Will you come to our party on Sunday?
+ Will you be coming to our party on Sunday?
+
+ How long will it be taking to finish.
+2011/11/24 
+ Create Markers
+
+  IResource resource = type.getUnderlyingResource();
+  IMarker marker = resource.createMarker(IMarker.TASK);
+
+  Eclipse represents Resourceslike Projects, Files, Folders, Packages
+  as IResource. Marker represent additional informations for resource.
+   e.g. an error marker. Every marker can have attribute( key/value pair)
+   Markers can be displayed in the standard view, e.g. the Task,Bookmark
+   or the problems view. To be displayed in thse views you have to use
+   prefedined attribute. The following will demonstrate how to create
+   marker for a selected resource.
+2011/11/23 
+  Labor Thanksgiving Day
+
+  What Is Labor Thanksgiving Day?
+   + It's a national Holiday in japan.
+     It takes place annually on November 23.
+	 It as an occasion for
+	 commemorating labor and production and 
+	 giving one another thanks.
+
+	 Labor Thanksgiving Day is the modern name for an ancient cereals
+	 harvest festival known as Niiname-Sai.
+
+	 Thanksgiving Day is a holiday celebrated primarily in the US and
+	 Canada. Thanksgiving is celebrated each year on the second Monday
+	 of October in Canada and on the fourth Thursday of November in 
+	 the US.:w:
+
+2011/11/21 
+ :
+2011/11/19 
+ In some java source the convention of declaring an argument final has 
+ started to appear. This declares that the variable passed in CANNOT
+ BE REASSIGNED, and the compiler WILL COMPLAIN. Changing the above example
+ to say void foo(final String bar) causes my javac to complain with
+  : variable bar might already has been assigned to bar = "foo".	
+
+  This construction and some of it's similarity and differences from 
+  C++ const declaration are clear.
+
+  Unlike in C++ where assigning to a reference parameter will have effects
+  outside the current scope to the variable that was aliased by the parame
+  ter. BUT in JAVA Final is mandated if you want to have instance of iner
+  classes declared within the method scope reference the formal parameter
+  of the method. Exmanple
+
+  *final* is misleading because ti means different things for methods
+   and different things  for variables and methods.
+   For method it MEANS CANNOT BE OVERRIDDEN.
+   For variable it means "IT CAN ONLY BE INITIALIZED BUT NOT ASSIGNED TO".
+    
+   Espacially since a variable declared +final+ is NOT generally expected
+   to have the behaviour of a constant, final looks quite funny cause it
+   essentially noting. the caller should NOT assume (inspite the final key
+   work) that the object passed as the variable , will NOT be Modified 
+   Because it IS DECLARED FINAL. final in this context has NO SIGNIFICANT 
+   semantic other than allowing for the inner class construction......
+
+   The final keyword has slightly differenct meanings
+   depending on the context. but in general it says:
+   "This cannot be changed." you maight want to prevent
+    changes for two reason
+	 1)  design
+	 2)  efficiency
+    
+	because these two reasons are quite different.
+	it possible to misuse the final keyword.
+
+	The following sections discuss the three places
+	where final can be used: 
+	 + for data
+	 + for methods
+	 + for a class
+
+
+	Final Data :
+    Many proramming languages have a way to tell the 
+	compiler that a piece of data is "constant".
+	constant is useful for two reasons
+	 1) It can be a compile-time constant that won't 
+	    ever change.
+	 2) It can be a value initialized at run-time 
+	    that you dont want changed
+
+		Static final         : piece of storage cannot changed
+		final with object    : makesthe handle a constant
+		final with primitive : makes the value a constant
+
+		The handle must be initialized to an object 
+		at the point of declaration and the handle 
+		can never be changed to point to another object.
+		How ever the object can be modefied.
+		Java DOES NOT PROVIDE A WAY TO MAKE ANY ARBITRARY
+		OBJECT a constant.
+
+		final int i1=9;           : compile time constants
+		static final int i2 = 22; : compile time constants
+		 are all named with all CA+ITALS by convention.
+
+		final int i4 = (int) (Math.random()*23);  : run-time constants
+		static final int i5 = (int) (Math.random()*33); : run-time constants
+	   
+	    Note that the values of i4 for fd1 and fd2 are unique.
+        BUT the value ofr i5 is not changed by creating the 
+		second FinalData object. That's because it's static
+		and is initialized once upon LOADING and not each tiem
+		anew object is created.
+
+		The variables v1 through v4 demonstrate the meaning of 
+		a final handle As you can see in main(), just because v2
+		is final doesn't mean that YOU CAN NOT CHNAGNE ITS VALUE.
+		HOWEVER YOU CAN NOT RE-BUILD v2 to a new Object.
+
+		Value v1 = new Value();
+		final Value v2 = new Value();
+		static final value v3 = new Value();	
+
+		precisely because it's final 
+		That's what final means for a hondle.
+		YOu can also see the same meaning holds true
+		for an array, which is just another kind of handle
+		Making handles final seems less useful than making primitives final.
+
+
+		Blank Final:
+		Java 1.1 allows the creation of blank finals,
+		which are fields that are declared as final but are NOT given
+		an initialization value. In all caces, the blank final must
+		be initialized before it is used, and the compiler ensures this.
+		However, blank finals provide much more flexibity in the use of the
+		final keyword since, for example, a final field inside a class
+		can now be different for each object and yet it retains its 
+		immutable quality. 
+
+		you are forced to perform assignements to finals either with
+		and expression at the point of definition of the field OR
+		in every CONSTRUCZTOR. This way it's guaranteed that the final
+		field is always initializaed before use.
+
+		Final Arguments:
+		Java 1.1 allows you to make arguments FINAL by declaring 
+		them as such in the argument list. This means that inside
+		the method you can NOT CHANGE WHAT the argument handle point to.
+
+		+ you can only read from a final primitive.
+		+ you can only call method of a final handle.
+
+
+		Note That you can still assign a null handle to an arguemnt
+		that's final without the compiler catching it.
+		just like you can with a non-final argument.
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2011/11/13 
+ EMF
+   EStructuralFeature
+    A representaion of the model object 'EStructuralFeature'
+	 THe following featrues are supporeted:
+	  + Changeable
+	  ;Volatile
+	  +Transient
+	  +Default Value Literal
+	  +Default Value
+	  +Unsettable
+	  +Derived
+	  +EContaining Class
+
+
+
 2011/11/12 
  There are three steps that msut be followed to use 
  these classes about Reflection.
