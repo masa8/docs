@@ -1,4 +1,32 @@
 
+2012/01/12 
+
+2011/12/18 
+
+ The core bundle contains the Person class and nothing else.
+ It has no dependencies on any other bundles.
+
+ The adapter framework is great for getting your objects to tightly 
+ integrate with existing parts of the Eclipse infrastructure.
+  Loose coupling with tight integration is pretty powerful stuff.
+ Tight coupling is bad because it tends to make things less flexible.
+ Tight coupling makes reuse harder.
+
+2011/12/17 
+ BaseWorkbenchContentProvider  tell Util for (IWorkbenchAdapter)
+ Util                          tell AdapterManager for (IWorkbenchAdapter)
+ AdapterManager                find AdapterFactory for The model.
+ AdapterFactory                get IWrokbenchAdapter
+
+
+
+ IWorkbenchAdapter
+ ====>AdapterFactory            (Model)
+ ========>AdapterManager        (IWorkbenchAdapter)
+ ============>Util              (IWorkbenchAdapter)
+ =================>BaseWorkbenchContentsProvider
+
+
 2011/12/17 
 2011/12/03 
  Me vs Myself
