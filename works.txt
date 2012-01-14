@@ -1,4 +1,79 @@
 
+2012/01/14 
+ Goal Setting Theory
+  
+
+
+
+  defficult
+  |                                         Better Task Performance
+  |
+  |
+  |
+  |
+  |
+  |
+  |
+  |
+  |
+  easy 
+        vague ______________________________ clear( specific )
+
+
+
+    Try hard
+	Do your Best   <<<< less effective <<<< Try to get more than 80parcent 
+	                                        correct
+
+											Concentrate on beating your 
+											Best time.
+
+ To motivate goal must have:
+   1. Clarity
+   2. Challenge
+   3. Commitment
+   4. Feedback
+   5. Task complexitly
+
+2012/01/14 
+ Goal setting is a powerful way of motivating people,
+ and of motivating yourself. The value of goal setting is so well 
+ recognized that entire management system have goal setting basics
+ incorporatedwithin them.
+ In fact, goal setting theory is generallly accepted as among the
+ most valid and useful motivation theories inindustrial 
+ and organizational psychology, human resource manageiment,
+ and organizational behavior.
+ Many of use have learned form bosses, seminars, and business articles
+ to set SMART goals. It seems natural to assume that by setting a goal
+  that is specific, measurable,attainable, relevant, and time-bound,
+  we will be well on our way to accomplishing it.
+?
+  But is this really the best way of setting goals?
+  To answer this, we look to Dr Edwin LOcke's pioneering research on
+  goal setting and motivation in the late 1960s.
+   In his 1968 article Toward a Theory of Task Motivation and Incentives
+  He stated that employees were motivated by clear goals and
+  appropriate feedback. Locke went on to say that working toward a goal
+   provided a major source of motivation to actually reach the goal 
+   which,  in turn,, improved performancre.
+
+   This informationdoes not seem revolutionary to us some 40 years later.
+    This shows the impact his theory hashad on professional and personal
+	 performance.
+
+  In this article, we look at what locke had to say about goal setting,
+   and how we can apply his theory to our own performance goals.
+
+    clear goals          ------> motivation --------> performance
+	appropriate feedback ------>
+
+2012/01/14 
+2011/12/23 
+ Class Library
+    PrintStream Class + println()
+	java.io package.
+	System.out --> java.lang
 2011/12/23 
 2011/12/17 
 2011/12/03 
