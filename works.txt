@@ -1,5 +1,10 @@
 
 2012/01/15 
+2012/01/15 
+
+test
+
+2012/01/15 
  git-rebase forward port local commits to the updated stream head.
 
  synopsis : git rebase <upstream> <branch>
