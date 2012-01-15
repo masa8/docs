@@ -813,7 +813,6 @@ Eclipse
 
 
 
->>>>>>> 14f1fe3... Revert "[add] xxxx"
 2011/11/12 
  There are three steps that msut be followed to use 
  these classes about Reflection.
