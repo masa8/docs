@@ -1,5 +1,33 @@
 
 2012/01/15 
+ git-rebase forward port local commits to the updated stream head.
+
+ synopsis : git rebase <upstream> <branch>
+
+2012/01/15 
+ What are you doing this weekend?
+ What will you do if you don't get the job?
+ I dont know. maybe I will study abroad or something.
+
+ What will you do after graduating from college?
+ I'm going to study abroad.
+
+ Are you going to study abroad?
+ Yes Im leaving for London this weekend.
+
+ What would you like to drink after the meal?
+ I'll have a cup of coffee, please.
+ Im gonna be pretty busy tomorrow.
+
+ Im taking the last Shinkansen tomorrow.
+ I already reserved the seat.
+
+ We are gonna go to a club Saturday.
+ Would you like to jon us?
+ I'll look into it and get back to you.
+
+ Everything is going to be alright
+2012/01/15 
  Are you OK?
  Do you want me to stay with you?
  I want you to help me with this.
