@@ -1,5 +1,59 @@
 
+2012/01/17 
+ git-clone Clone a repository into a new directory.
+
+ SYNOPSIS
+    git clone <repository> <directory>
+
+	Clones a repository into a newly Created directory,
+	Creates remote-tracking branchs fro each branch in the cloned
+	repository ( visible using git branch -r ), and creates and 
+	CREATES and checks out an initial branch that is forked from
+	the cloned repository's currently active branch.
+
+	After the clone, a plain git fetch without arguments will update
+	all the remote-trackign branches,
+	and a git pull without arguments will in addition merge the remote
+	master branchinto the current master branch, if any.
+
+    This default configuration is achived by creating references
+	to the remote branch heads under refs/remotes/origin and by
+	Initializing remote.origin.url and remote.origin.fetch 
+	configuration variables.
+
+	refs/remote/origin
+
+
+2012/01/16 
+2012/01/16 
+ <refspec> : The format of a <refspace> parameter is an optional plus
+             ..
+
+			 (+)<src>:<dst>
+
+			 the remote ref that matches <src> is fetched,
+			 and
+			 if<dst> is not empty string
+			 the local ref that matches it is fast-forwarding using <src>.
+
+			 If the optional plus + is used, 
+			 the local ref is updated even if it does not result in a
+			 fast-forward update
+
+
+2012/01/16 
+ 
 2012/01/15 
+ There is one special case not mentioned above.
+ which is treated differently.
+ Normally, a merge results in a merge commit with two parents,
+ one for each of the two lines of development that were merged.
+ However, ifthe current branch has not diverged from the other
+ SO every commit present in the current branch is already contained
+ in the other then git just performes a "fast-forward", the 
+ head of current branch IS MOVED FORWARD to the point at the head
+ of the merged-in branch, WIHTOUT ANY NEW COMMIT BEING CREATED.
+
 2012/01/15 
 
 test
