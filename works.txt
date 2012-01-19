@@ -1,4 +1,54 @@
 
+2012/01/19 
+ would  1 past of will  PAST
+
+          weak of will  AUX
+		  hope of will  AUX
+
+  They would help us <<<<<<<<<<<<<<<<<<<<<<AUX
+  They said they would have helped us. <<<<AUX
+  They said they would help us <<<<<<<<<<<<PAST
+  I would have helped us. <<<<<<<<<<<<<<<<<AUX
+
+   Would like : Want
+   Would you like to go for work today? NO!
+
+   Would rather : 
+   I would rather to stay home than go for work today.
+   I would rather have gone to the beach than stayed home.
+
+    Would : syuukan no kako
+	 He would oftenreturnhome exhausted from his work.
+	 I would sometims sit up reading all reight.
+
+	would : kyozetsu no kako
+	 I warned you, but you would do it yourself
+
+    would : kibou
+     I would like to ask you to lend this book. if you would.
+	 I wish he would tell me something about himself.
+	 Would you like a cooktail before dinner?
+	 Would you like to visit the factory for information?\\\
+
+	would : teinei
+	 Would you kindly attend the conference tommorow?
+	 Would yo mind telling me  your name?
+
+				Hope ( 3.hope )
+				|
+				|
+				|
+				|
+				|
+Past------------Will
+(1.used to)     |
+(2.will)		|
+				|
+				|
+				|
+				Polite
+                 ( 4, would you like )
+
 2012/01/17 
  git-clone Clone a repository into a new directory.
 
