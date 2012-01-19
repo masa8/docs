@@ -1,5 +1,183 @@
 
 2012/01/19 
+To include a backslash as a character without any special meaning inside 
+a character class, you have to escape it with another backslash.
+[\\x] matches a backslash or an x.
+
+ 
+ \,^,- can be included by escaping them with a backslash
+                       by placing them in a position where do not take on
+					   their special meaning.
+ 
+ I recommend the latter method, since it improves readability.
+ To include a caret, place it anywhere exept rigth after the opening bran
+ ket. [x^] matches an x or a caret. YOu can put the closing branket right
+ after the opening brancktor the negating caret matches a closing branket
+ or an x. []x] but
+ [^]x] matches any character that is not a closing branket or an x.
+
+ Shorthand Character Classes 
+ Since certain character classes are used often,
+ a series of shorthand character classes are available.
+
+  \d is short for [0-9]
+  \w stands for "word character", usually [A-Za-0-9_]
+  \s stands ofr "whitespace character",[ \t\r\n] ( space, tab, line break)
+
+  Negative Shorthand Character Classes
+  The above three shorthands also have negative versions.
+
+   \D is the same as [^\d].
+   \W is short for [^\w].
+   \S is the equivalent of [^\s].
+
+   Be carefule when using the negated shorthands inside square brankets.
+   [\D\S] is NOT the same as [^\d\s].
+
+   The latter will match any character that is not a digit or whitespace
+   So it will match x, but not 8. The former, however, will match any 
+   character that is either not a digit, or is not whitespace.
+   So former will match any character, digit, whitespace or otherwise.
+
+Repeating Character Classes
+If you repeat a character class by using the ? * + operators,
+You will repeat the entire character class, and not just the
+character that it matched. The regex [0-9+] can match 834 as wellas 333
+
+If you want to repeat he matched character, rather than the class,
+you will need to use backreferences ([0-9])\1+ will match 333 not 322.
+
+Reqular Expression Basic Syntax 
+Any Character except [\^$.|?*+()   ----> match a single instance of 
+                                         themselves
+
+\ followedby any of special characters to suppress their special meaning
+
+
+. (dot)  matches any single character except line break characters
+         \r and \n.
+^(caret) Matches at the start of the string the regex pattern is applied
+         to.  Matches a positoin rather than a character. 
+           ^. match a in abc
+[^        Negates the character class, causing itto match a single 
+          character notlisted in the character class.
+		     [^a-d] matchs x (any character except a, b, c or d)
+
+
+$ (dollar) Matches at the end of the string the regex pattern is appliedto.
+ 
+?     Make the preceding item optional.   abc? matchs ab or abc
+*     Repeats the previous item zero or more times.
+       so:, ".*" matchs xx  test "xx" test "ss" test
++     Repeats the previous item once or more.
+       so, ".+" matchs "xx" test "ss" in test "xx" test "ss" test
+
+Positive and Negative Lookahead
+Negative look-ahead is indispensable if you want to match something
+not followed by something else.
+When explaining character class, I already explained why you cannot
+ use a negated character class to match a "q" not followed by a "u".
+ Negative lookahead provides the solution. q(?!u).The negative lookahead 
+ construct is the PAIR of round brackets, with the opening brancket
+ follwed by a question mark and an exclamationpint. inside the look
+ ahea, we have teh trivial regex u.
+
+ Positive lookahead work just the same q(?=u)
+
+
+ (?=[^@])
+
+Metacharacters Inside Character Classes
+  Note that the only special characters or metacharacters inside a charac
+  ter class are 
+     the closing brancket(]), 
+	 the baskslash(\),
+	 the caret(^),
+	 the hyphen(-).
+
+  The usual metacharacters are normal characters inside a charactrer class.
+  and not need to be escaped by a backslash.
+
+ 
+  To search for a star or plus, use[+*].
+  YOur regex will work fine if you escape the regular metacharacter inside
+  a character class, but doing so significantly reduces readability.
+
+
+
+2012/01/19 
+ Negated Character Classes
+  Typing a caret after the opening square brancket will nagate the caharac
+  ter class. The result is taht the character class will match any charac
+  ter that is NOT in the character class. Unlike the dot. negated character
+  also match (invisible) line break charecter.
+  It is important to remember that a negated character class STil must
+  match a character . q[^u] does not mean. "a q not followed by a u".
+  It means "a q followed by a character that is not a u."
+  it will not match the q in the string Iraq.
+  it will match the q and the space after the  q in Iraq is a country.
+  Indeed: the space will be part of the overall match. because it is the 
+  character taht is not a u" that is matched by the negated character class
+  in the above regexp. if you want the regex to match the q, and ONLY q,
+  in both strings, you need to use negative lookahead q(?\u).
+
+
+ Negated Shorthand Character Classes
+ The above three shorthands also have negatd versions.
+ [\D] is the same as [^\d].
+ 
+ 
+ Regular expresion ( regexp ) 
+  => 
+   The W3C XML Schema standard defines its own regular expression flavor.
+   You can use it in the pattern facet of simple type definitions in your
+   XML schemas.
+
+   e.g. the following defines the simple type SSN using a regular 
+        expression to require the element to contain a valid US Social 
+		Seculrity Number.
+
+		<xsd:simple...
+
+ The XML Schema flavor is quite limited infeatures.
+ Since it's only used to validate whether an entire element matches a
+ pattern or not. The limitations allow schema validators to be 
+ implemented with efficient text-directed engines.
+
+ Particularly noteworthy is the complete absence of anchors like the
+ caret and dollar, word boundaries adn lookaround. XML schema always
+ implicitly anchors the entire regular expression. 
+ The regexp must match the whole element for the element to be considered
+ valid. If you have the pattern regexp, the XML schema validator will
+ apply it in the sama way as say Perl, Java or .NET Would do with the 
+ pattern ^regexp$. 
+
+ If you want to accept all elements with regex SOMEWHERE in the middle
+ of their contents, you will need to use the regular expression 
+ .*regex.* The to .* expand the match to cover the whole element,
+ assuming it does not contain line brakes. If you want allow line brakes,
+ you can use something like [\s\S].*regexp.*[\s\S].
+
+ Combining  a shorthand character class
+
+ Character Classes or Character Sets	
+ With Character class, also character set, you can tell the regexp engine
+ to match only one out of several characters.
+ Simpley place the character you want to match between square brankets.
+ If you want to match an a or e , use [ae].
+ You could use this in gr[ea]y to match graay or graey or any such thing.
+ The order of the characters inside a character class does not matter.
+ The result is identical.
+
+ You can use a hyphen inside a character class  to specify the range of
+ characters. [0-9] matchs a SINGLE digit between 0 and 9.
+ [0-9a-fA-F] matches a single hexadesimal digit, case insensitively.
+ You can combine renges and single characters. 
+
+ THE ORDER OF THE CHARCTERS IN THE CLASS AND THE RANGES DOES NOT MATTER.
+ 
+
+2012/01/19 
  would  1 past of will  PAST
 
           weak of will  AUX
