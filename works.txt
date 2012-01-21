@@ -1,6 +1,170 @@
 
 2012/01/21 
 
+ Diagnostic
+  Information about the outcome of some activity.
+ BasicDiagnostic
+  A basic implementaion of a diagnostic that that aso acts as a chain.
+
+ DiagnosticChain
+  An accumulator of diagnostics.
+
+The code invoking the validation can add to the map an instance of the 
+EValidator.SubstitutionLabelProvider interface to be queried for the 
+label object.
+
+
+This design allows you to create a wrapper for the label provdider
+you are useing for the UI, ensuring that a given instance will be 
+consistently labelded across your application.
+
+If there is no such object in the map, the method returns a unique 
+identifier for the object, as defined by EcoreUtil.getIdentification().
+
+The last comment to be made about the default implementation of the
+xxx() method is related to this line.
+
+The diagnostics object implemtns the DiagnosticChain interface and
+can be used to group all teh diagnostics produced by the validation
+of different constraints and invariants.
+
+As we will see in the next section, the data available in a chain
+of diagnostics provides very rich feedback to the user if properly
+presented.
+
+/*---------------------------*/
+
+Again it's necessary to set the condition in the first if clause
+and to ensure that the instantiated BasicDiagnostic has the right
+information. F
+
+or the preceding example,we could check if the item
+is in a purchase order and if the order and ship date are correct
+as follows;
+
+We might alos need to customize the diagnostic that gets produced.
+All of the previous comments about initializing he diagnostic and
+computing the object's label are also applicable here.
+
+
+/*-------------------*/
+ YOU CAN TAKE ADVANTAGE OF THEM! in your application by validating your 
+ objects at important moments or at the user'S discretion.
+
+ A)
+
+  Client ------hasUSState()----> MOdel
+         -----.INSTANCE-------->Validator
+		 -validate-Instance
+
+		 Cons: This has to be manually updated to reflect any future 
+		       changes to the model. New constraints and invariants or e
+			   ven structural changes to the model easily make this 
+			   method useless.
+
+ B) 
+
+  Client ------.INSTANCE----->Validator
+         -validateUSADDRESS()
+		 -validateItem()
+
+
+		 Design; Whenever the package's validator class is generated.
+		         it will include a validate method for each class  
+				 defined in the package. Here, we are invoking these
+				 methods, which are guaranteed to call out to all the
+				 constraints and invariants defined on the corresponding
+				 classes. Here you are involding these methods,
+				 which are guaranteed to call out to all the constraints
+				 and invarinats defined on the corresponding classes.
+
+				 Be in Framework.
+
+		Cons:  It does not strengthen the algorithm to support other
+		       changes to the model. because the models have a tendency
+			   to evolve, we could try another more generic implimentation
+
+ C)
+  Client   ------getEPackage()-->MOdel
+           ------.INSTANCE-----> EValidator.Registory
+		   -getEValidator-
+		   --validate()-> EValidator
+
+        
+         Design: This implementation exposes the EValidator interface,
+		         which we have not mentioned until now.
+				 A Evalidator is an object responsible for performing 
+				 validation. as you might guess, PPOValidator, like any 
+				 other generated package's validator class implments 
+				 this interface.
+
+				 When geterated package is being initialized.
+				 it registers its default validator in EValidator.Registry
+				 which then can be queried by any code that needs to 
+				 validate an object.
+
+	    Cons:  It does not handle the scenario in which an object contains
+			   objects from different package.
+
+ D)
+        To be as general as possible, we would have to ensure that
+		we are using the appropriate validator for each object in
+		the containment tree. that is, the validator registered for
+		the packeage in which the OBJECT'S Class is defined.
+
+
+		As you can see, there are lots of details to be considered
+		when writing a method to validate constraints and invariants. 
+		With this class, we can easily write the final version of the
+		validateObject() method we've been evolving in this section!!!
+
+
+ Client   ---.INSTANCE ----> Diagnostician
+          -validate(eObject)
+
+
+		  The Diagnostician class provides several methods 
+		  to start a validation. of which we've selected the simplest.
+		  
+		  The others allows you to specify, for example, the context
+		  and diagnostic chain to use in the validation. 
+
+		  Diagnostician also provides methods to verify 
+		  if a givenvalue violates any constraint defined for a data type.
+		  
+		  These methods can be really handy in some several adapters
+		  listening to changes in your model.
+          You can use one of these methods to validate a value before
+		  actually modifying an attribute of a class.
+
+
+
+    Cons ;  One interesting side effect of using a Diagnostican
+	        is that you can easily compute the result of the
+			evaluation based on a diagnostic, instead of simply
+			forwarding a boolean return value.
+
+
+/*--------------------------*/
+  Generated editors already provide a Validate action, which uses a 
+  diagnostician to perform full validation of the object selected
+  in the editor.
+
+  To use this UI to validate the constraints and invariant,
+  you neeed to generate editor and edit plugins for PrimerPO model
+ 
+
+
+
+2012/01/21 
+ Invariants and Constraints
+
+ Invariants: <xsd:appinfo ecore:key="operations">
+ Constraints: <xsd:complexType ecore:constraints="XX XXX"
+ :wq
+
+2012/01/21 
+
  Perhaps the first step in writing reusable schemas is to document them.
  W3C XML Schema provides analternative to XML comments and processing 
  instructions that might be easier to handle for supporting tools.
