@@ -1,4 +1,125 @@
 
+2012/01/21 
+
+ Perhaps the first step in writing reusable schemas is to document them.
+ W3C XML Schema provides analternative to XML comments and processing 
+ instructions that might be easier to handle for supporting tools.
+
+ while information targetd at application should be include in xsd:appinfo
+ elements. the elements must be included in xsd:annotation element.
+ It accept xml:lang and source attributes.
+ The source attribute i a URI reference that can be used to indicate
+ the purpose of the appinfo to the processing application.
+
+ The xsd
+2012/01/21 
+ EMF 
+  Xml Schema <appinfo>
+
+  The appinfo element specifies information to be used by the applicaiton.
+  This element must go within an annotation element.
+
+  <appinfo source=anyURL>
+  Any well-fromed XML content
+  </appinfo>
+
+  appinfo offers a placein which we can provide additional information
+  to a processing application.
+
+  The appinfo child of the annotation element is designed to pass 
+  information to a processing application.
+  This will be a particular advantage to schema user if xml schema
+  compliant perser instruction to pass information to the processing
+  application ofthen had to write persers in order to do this. 
+  a lot of developers who could have made use of processing instractions
+  ended up putting that information in application code,  making the
+  resulting less flexible. By allowing information to be put into 
+  the applinfo elemnt, programmer can either pass information to the
+  application about how the section of a conforming document should be 
+  processe, or they can add extra code inside the appinfo elements.
+
+  The applinfo element 
+2012/01/21 
+ EMF How to add Constraints and Invariants into Xml Schema.
+
+ simpleType element defines a simple type and specifies the constraints
+ and information about the value of attribele or text-only elements.
+
+ id : Optional 
+ name Specifies a name for the elements.
+      This attribute is required if the simpleType element is a child
+	  of schema element, otherwise it is not allowed.
+ 
+ ANY ATTRIBUTES : Optional. Specifies any other attributes with  
+                  non-schema namespace.
+
+ < restriction| list | union >
+
+ The <schema> Element The <schema> element is the root element 
+ of every XML Schema.
+
+ The schema elment may cantain some attributes. A schma declaratin
+ often looks something like this.
+
+ The following fragment  xmlns:xs="hhhhhh"
+ indicates that the  elements and data types used in schema come from that.
+ name space.
+
+ elementFormDefault = "qualified"
+ indicats that any elements used by the XML  instance document which were
+ declared in this schema must be namespace qualified.
+
+
+ I use an XML Schema to genarate my EMF model.
+ MY xsd looks something like this.
+  ecore:cfe
+
+  The import element is used to add multiple schemas with different target 
+  namespace to a document.
+
+  What's different between import and include
+
+  Both import and include do same functions. HOwever
+  the import element allows you to access components from multiple Schemas
+  that may belong to different target namespace.
+
+
+   schema 1 ----------> 1 target Namespace
+          * ----------> 1 target Namespace
+		  * ----------> 0 target Namespace
+
+ What are tradeoffs?
+ What guidance would you give someone starting ona project that will 
+ crate multiple schemas
+ ???
+
+
+ Heterogeneous Namespace Design
+   person.xsd ----> target
+  | Product.xsd ---> target
+  | |
+  V V <import>
+  Company.xsd ---->target
+
+
+Homogeneous Namespace Design
+ This design approach saysto create a single, targetNamespace for all the 
+ schemas. 
+   person -------------target
+  | product+-----------+
+  | |                  |
+  V V <include>        |
+ Company.xsd ----------+
+
+Also note the mechanism used for accessing  compornents in order schemas
+which have the same targetNamespace. <include>
+
+      same namespace       the other namespaces 
+ +-------------------->----------------------->
+ +------<include>-----+--------<import>-------+
+
+with restriction.
+The value of age can not be lower than 0 or grateter than 100.
 2012/01/19 
 To include a backslash as a character without any special meaning inside 
 a character class, you have to escape it with another backslash.
