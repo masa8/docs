@@ -1,4 +1,331 @@
 
+2012/01/28 :wq
+ YOu are being modest.
+ She is being silly.
+ He is being shay.
+ YOu are stubborn
+ you are being stubborn.
+ Maybe I am paranoid.
+ Maybe I m being paranoid, but I have a bad feeling.
+ Hey, Would you please sit down? you are being rude.
+ I dont thinkyou are being unfaithful. but somehow I feel nervous.
+ Im not being bossy. I just want what's best for you.
+2012/01/26 
+ \A only ever matchs at the start of string likewise only ever matches 
+ at the end of the string. These two tokens never match at line breaks.
+ This is true in all regex flavors discussed in this tutorial,
+ even whenyou trun on "multiline mode". In EditPad Pro and PowerGREP,
+ where the caret and dollar always match at the start and end 
+ of line, \A and \Z only match at the start and the end of the entire file.
+
+
+
+ LITERAL CHARACTERS
+ The most basic regular expression consits of a single literal character,
+ e.g. a. it will match the first occurrence of that character in the string
+ if the string isJack is a boy. it will match the a after the J.
+ The fact that this a is in the middle of the word does notmatter to thre
+ regex engine. if it matters to you, you willneed to tell that to the 
+ regex engine by using word boundaries. weee will get to that later.
+
+ This regex can match the second a too. it will only do so when you tell 
+ the regex engine to start searching through the string after the first 
+ match. in a text editor, you can do so by using its find next or search 
+ forward function. in a programming lanuage, there is usually a separate
+ function taht you can call to continue searching through the string after
+ the previous match.
+
+ smilarly, the regex cat will match cat in About cats and dogs. this regul
+ ar expression consists of a series of three literal characters.
+ This is like saying to the regex engine. find a c,
+ immediately followed by an a, immediately followed by a t.
+
+ Note that regex engines are case sensitive by default.
+ cat does not match Cat, unless you tell regex engine to ignore differences
+ in case.
+
+ Thus far, Ihave explained literal charactrers and character classes.
+ In both cases, putting one in a regex will cause the regex engine
+ to try to match a single character.
+
+ Anchors are a different breed. They do not match any character at all.
+ instead, they match a position before, after or between caharacters.
+ They can be used to "anchor" the regex match at a certain positoon.
+
+ The caret ^ matches the position before the first character in the string
+ Applying ^a to abc matchs a. ^b will not match abc at all
+2012/01/24 
+ 
+  + recode 
+  + playback
+
+ start with -clean option.
+
+ Step1. registering listeners
+ Step2. capturing Events
+ Step3. deciphers which type of event was called 
+ Step4. create a new command on the type.
+
+ Step5. find the targets in the display
+ Step6. find the widget in the target
+ Step7. perform the actions on the widget.
+
+
+
+
+2012/01/22 
+ Executing Batch Validation
+ Now that the constraint has been registerd and the category has been 
+ bound to our client context
+
+ category ----> constraint
+   ^
+   |
+   V
+ context
+
+
+WE can call the valdation service to perform a batch validation like this:
+
+
+ValidationDelegateClientSelector.running = true;
+IBatchValidator  validator = ModelValidatinService.getInstance().new
+                            Validatior(EvaluatioMode.BATCH);
+
+				 validator.setIncludeLibeConstatins(true);
+IStatus status = validator.validate(selectedEobjects);
+ValidationDelegateClientSelector.running = false;
+
+2012/01/22 
+2012/01/22 
+ The EMF validation framework provides a means to evaluate and ensure
+ the well-formedness of EMF models. Validation comes in two forms
+
+  + batch 
+  + live
+
+ While batch validation allows a clients to explicitly evalutate
+ a group of EObjects and their contents.
+
+ LIVE validattion can be used by client to listen on change
+ notifications to EObjects to immediately verify that the changes 
+ does not violate the well-formedness of the model.
+
+ Client contexts can be specified to ensure that certain constraints 
+ do not get executed outside of certain context.
+ A context is defined by the client to set up their own boundaries 
+ from other clients
+
+ This tutorial assumes that the reader has a knowledge of EMF.
+ and the eclispse PDE development environment.
+ It's essential that thereader understands the basic reflective
+ mechanisms of EMF as well as its adapter/notifier system for
+ broadcasting event.
+
+
+  The KNOWLEDGH OF EMF 
+  PDE ENV
+  REFLECTIVE OF EMF
+  ADAPTER/NOTIFIER
+
+
+
+  In order to demonstrate EMF Validation, we will be makeing use of
+  the library metamodel. 
+
+   LIbrary --- book -----writer
+                ^
+				|
+				EObjects * ------ EStructualFeature ( called page )
+				                                      * -------------int
+													              pagenum
+
+
+
+ case there is no unique identifier for the book
+                                            library
+											writer
+
+
+ Constructing a Batch Model Constraint
+  A model constraint is writtenas a subclass of the AbstractModel
+  Constraint that overrides the validate() method
+
+
+  AbstractModelConstraint
+   + validate():IStatus <------------------------- IValidationContext
+                                                      + getTarget()
+													  + getEventType()
+
+ The target EObject is retrieved form the IValidationContext by 
+ calling the getTarget() method. 
+ In order to rule out live validation cases,
+ we check to ensure that the getEventTypee()  is EMFEventTyep.NULL.
+ If our constaint provider extensionis writeen correctly,
+ We shouldnever be called to perform a live validation.
+
+ The constraint checks each type of object to ensure that its identifier
+ is not nullor empty. In the case of a failure, it returns a failure
+ status and place the name of the EObject's Eclass to be fromatted
+ as part of the failure message. 
+
+
+ org.eclipse.emf.validation.constraintProviders
+  name=XX
+  id=XXX
+  <constaintProvider>
+    <package namespaceURI = XXX/>
+	<constraints categories = "XXX">
+	  <constraint
+	    lang=java
+		class=XXX
+		severity
+		name
+		mode=Batch
+		id
+		code=1
+		<description/>
+		<message/>
+		<target class ="Library">
+
+
+
+   group -------- constraint --------EPackage
+        *category  *provider  namespaceURI
+		                     targetclass
+					 ^
+					 |
+					 |
+					class
+
+  NOTE: no context here.
+
+ Creating a Client Context
+  Client contexts are used by application writers to define the context
+  in which theri validation will occur.
+  This prevents constraints that were provided by a third-party for
+  a third-party application formbeing executed in the wrong context.
+
+  In our case, we don't wnat our constraint to be executed in any other
+  context other than our own sowe will create our own client context
+  and bind our constraint category to our context.
+
+
+  org.eclipse.emf.validation.constraintBinding
+   < clientContext id ="XXX"
+    < selector class =XXXSelector
+	< binding
+	    context = "XXX"
+		category = "xxx"
+		/>
+
+
+   category ----- ConstraintProvider -------> MODEL
+             ID                       namespace
+			 ^         Class
+			 |      	 ^
+			 |      	 |
+			 |		 ConstraintImpl
+			 |
+			 |
+   binding   |
+             |
+			 |
+			 |
+			 |
+			 |
+			 ID
+		  Context
+		       Selector
+ 
+ This extension registers the client context that is NOT a DEFAULT context.
+ Default contexts will accumulate constraints and categories that have
+ not been bound to any context. We provdie a unique identifier and
+ a selctor class for this context. The selector has hte purpose of
+ discovering whether an context. 
+ A context binding is set up to link our category wiht our client
+ context.
+ The selector is a simple static latch we will latch wheneve we
+ call the validationservice inthe next section.
+
+ Using a client selector is not the only approach that can be used 
+ to categorize an EObject as part of a client context.
+ An alternative would be to use an XML enablement expression in an 
+ enablementnode of the XML to reflectively produce a true /false value
+ when evaluated against a Java Object. 
+
+
+
+
+ 2012/01/22 
+ + org.eclipse.emf.validation.constraintProviders : is used to provide 
+                                                    constraints.
+
+		Static Constraint providers declare constraints in the 
+		plugin.xml.
+		Constraints are groupedintohierarchically structured 
+		categories. 
+		Constraint providers target one or more EPackages by 
+		namespace URI
+
+		ConstraintsProvider 1 ---------> * EPackage
+		                            namespaceURI
+
+		A group of constraints declares categories in which they are
+		members. Each constraint has a variety of meta data associated with
+		it ( Language, ID, severity,mode, name, message,triggers,etc)
+
+		Group 1 ------- * Constraint
+
+
+		Dinamic constraint providers address situations where 
+		constraints cannot be declared statically. e.g, where constraints
+		are defined in models or otehr resources.
+		Dynamic providers declare a class implementing the ModelConstraint
+		Provider interface. This class is resp0onsible for making 
+		constraints available on the appropriate triggers,
+		organizing them into categories..
+
+
+		Category ----- Constraint ------- EPackage
+
+
+ + org.eclipse.emf.validation.constraintBindings : allows clients of the
+                                                   EMF Validation frame-
+												   work to define
+												   "client contexts"
+												   that describe the object
+												   that they are interested
+												   in validating.
+
+	"client context" ---------> object interested in.
+	                 describe
+
+
+     to bind them to constraints that they are interestedin 
+	 enforcing on thses objects.
+
+
+	 constraints -----(  client context ) ---- Object interested in.
+                                     enablement
+
+     group -----------( client context ) ----- Object interested in.
+	                                 enablement
+									 selector
+
+	 A client context can declare anenablement expression that 
+	 matches model elements. Where that is not sufficient 
+	 an alternative
+	 is to define a selector class useng selector element.
+
+	 Client contexts canbe bound to constraints, individually 
+	 or to constraint category
+     Binding to constraint categories has the advantage of allowing 
+	 new constraint contributions in a category to AUTOMATICALLY 
+	 Be found to the appropriate client context, evenif the 
+	 constraintis defined in a plugin that is unaware of that
+	 context or its binding to the category.
+     
 2012/01/21 
 
  Diagnostic
