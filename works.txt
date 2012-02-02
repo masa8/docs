@@ -1,8 +1,120 @@
 
+2012/02/01 
+ 
+       +-------------------------------------------------->
+	    Im not sure        I dont know     I have no idea.
+
+
+2012/01/29 
+ ROUDOUKUMIAI:
+   KENPO -28  
+              + DANKETSU
+			  + KOUSYOU
+			  + KOUDOU
+   ArticleXXV1 : The rigth of workers to organize and to bargain and
+                 act collectively is guaranteed.
+            =--======
+   ROUDOUKUMIAIHOU -5  
+               KIYAKU 
+			           + SENKYO
+					   + SOUKAI
+
+/01/28 
+ Hwo to typedef a pointer to method which returns a pointer the method?
+
+ What is a type? NO, really, what does it mean??
+  One purpose of having types is to make sure that variables are always
+  used in the way that they were intended to be used.
+   C and C++ provide sereral built-in types that are based on t he underlying
+  representation of the data. Sometimes this si good enough: when you are 
+   working to save memory or perform numerical computations that require
+   the right level of peecision, you want to have tight control over these
+    matters.
+Number are surely the most prevalent kind of data in computer programs.
+They are so fundamental that people dont spend much time taking about 
+them -surely everybody knows how to use nubmers in their programs.
+Well, one of the wornderful things about programming is that nearly 
+everywhere you look, you find more than meets the eye.
+
+Most programmers have heard or observed one strange things or another aobutfloating point numbers For example, we often discov Ier that floating point
+numbers that look the same do not necessarily stisfy C's "==" test.
+New programmers are usually taught never to use == for floating point
+numbers for this reason. Occasionally we
+run into other exeptional cases, for instance mathematically soundformulae 
+which implemented using floadtin point, produce seemingly randam or disapp
+intingly inaccuarete results.
+
+
+What's going on?? In truth there is much that is counterintutive about
+floating point numbers, and it helps to know a thing or tow if you want to 
+use them productively in your programs.
+
+Floating point numbers provide a kind of ILLUSION. they look like "real"
+numbers with decimals and possibly very large or small magnitudes.
+IN reality, a 4-byte floating point nmber, for exampl, can actually howld
+fewer distinct numbers is not straightforward. its represnting an integer
+are interpreted literally as a binary number, 
+
+while bits in a floating point number have a more complicated
+interpretatinon.
+
+I will talk about this interpretation at length, but first I'd like to 
+discuss some conceptual differences between integers and floats.
+
+PRECISION: seido
+ACCURACY : seido
+
+
+Accuracy and precision are two concepts in measurement that nicely capture 
+the different properties of ints and floats  (on any system, independent o
+f particular floating point representation used)
+
+"Accuracy" refers to how close a measurement is TO THE TRUE VALUE
+"precision" has to do with HOW MOCH INFORMATION YOU HAVE about a QUANTITY,
+                           HOW UNIQUELY you have it pinned down.
+
+Integer arithmetic enjoys the property of complete accuracy.
+If I have the interger "2", it is exactly 2, on the dot,
+and nobody can dispute that. furthermore, if I add 1 to it, I know I will
+get a number that matches the correct answer bit for bit.
+
+However intergers LACK PRECISION. DIVIDING both 5 and 4 by 2will both
+yield 2. Integer are unable to keep trac ofthe fractional part, so the
+informationthat i had a slightly bigger number tan 4 (namely 4)is
+lost in theprocess. Integer are too "chunky" to represnt thees finer
+gradations. using them is lie building with bricks. 
+if you cant to make a cube, you know the brick canrepresent itperfectly,
+buto a sphere wouldn't comeout quite as well( naturally, if the sphere is
+significantly larger than each brick,you meightbe able to get close enough)
+
+Floating point numbers are the aexact opposite of interger with respect to 
+accuracy and precision. They have good precision, since they never deliber
+athely discard information representing your numbers. I fyou had enough 
+bits, ou couldreverse any FP calculation to get the original number, just
+like how, with enough bit, you could represent an arbitarily large integer.BUT!! floating point numbers has poor accuracy. If ints are like bricks.
+hen floats maight be thought of as silly putty. 
+You have enough contrl to modl them into complex curved shapes, BUT!!
+They leave something to be desired ehn it comes to forming a specified 
+target shape. Imagine trying to make a perfect cube out of silly putty
+you llnever get those corner as shapes as they should be. in fact, 
+in manycasees thes is literally NO HOPE of a floating point answer's 
+matching thecorect answer bit for bit..
+
+We jsut have to prevent those little roundoff erros formstepping on
+our toes. To that end andalos for general edification,
+It nocetoknow how float actually work.
+
+
+
+				Accuracy(roundoff)		Precision (divided by)
+  integer    	GOOD					BAD
+  float			BAD             		GOOD
+  painter       GOOD                    GOOD
+
 2012/01/28 :wq
  YOu are being modest.
  She is being silly.
- He is being shay.
+ H:wqe is being shay.
  YOu are stubborn
  you are being stubborn.
  Maybe I am paranoid.
