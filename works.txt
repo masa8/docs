@@ -1,4 +1,667 @@
 
+2012/03/05 
+ Task)
+ In :
+2012/03/04 
+ 
+2012/03/04 
+ A locale ID reflects the local conventions and language for a particular
+ geographical region. A given language might be spoken in more than one
+ Country/Region; for example, portuguese is spoken in Brazil as well as in
+ Portugal. Conversely, a countryregion might have more than one official 
+ language.  for example, Canada has two language English and French. 
+ Thus Canada has two distinct locales: Canadian-English and Canadian-
+ French. Some locale -dependent categories include the formatting of dates
+ and the display format for monetary value.
+ The language determins the text and data formatting conventions,
+ while the contry/regiondetermins the national vonventions.Every language
+ has unique mapping represented by code page, which include characters oth
+ er than those in the alphabet ( ushc as punctuationmarks and number)
+2012/03/04 
+ the locale refers to the locality :
+   country
+   region
+   language
+
+   for which you can customize certain aspects of your program.
+   Some locale-dependent categories include the formmatting of dates
+   and the display format for monetary values. for more information,
+   see locale categories
+
+   Use the setlocale function to change ro query  some or all of the 
+   currnet program or thread locale information while using functions 
+   without the _l suffix. .The  function with the_l suffix will use 
+   the locale parameter padded in for their locale information during
+   the execution of that specific function only. 
+2012/03/04 
+ 
+2012/03/04 
+ Task) 
+   This article is about readingand writing Unicode to character streams
+   in UTF-8 encoding.
+   And as a consequence is about an often mis-known aspect fo the C++ STL
+   /Iostream library locales.
+
+   The doc that comewith the STL itself, although thecnically perfect does
+   not help so much in understanding the relation between the object that
+   are involved a evensimple expression like a_stream >> variable;
+   also because some of the detail are hidden by underlying logic.
+
+Also, the behavior of the STL asn the relation with the operating system
+are not always so evidents, letting certain operations some"mysterious"
+This article goes into some aspect of the UNICODE Encoding, STL locales,
+and the relation with Windows. The code we are referring is though as 
+serving VC8, as well as MINGW.
+
+The history of chracters encoding is NOT the most linear as it could be.
+a number of assumption made at certain time that has been reverted later
+made and still make some confusions.
+
+In the beginning
+In the beginning there where the ty. pewriters and the teltypes that 
+- in essence = where typewriters with wires between the kyboad and the pa
+per. In the need to grand interoperability between the two halves of 
+these machines, the ANSI committee defined the ASCII character set.
+This set was designed to provide a binary representation for the 26 Latin 
+characters, either insmall and capital format.
+Some punctuation and accents, and to some "commands" of typical use in 
+teletyping like CR, LF, FF, etc.. adn was designed to staty ito 7 bit,
+to help he hardware manufactureer in having the 8th bit available for e
+rror checking parity. The missing of accented character was not a big deal,
+since teletyping is over-impressive an "a" was simply written as a BS'
+Different countries where alos not necessary neededto be supported: ASCII
+is the American Standard Code.." Who'S not American, just used another en
+coding schema. INteractive computers complicated a while this aspects.
+
+ + Ther circulation of software was anymore a country limited affair and..
+ + The nature of a display required a character matrix associating a code
+   prepesenting thedisplayed "character" at a given positon, hence...
+ + Tricks like the use of backspace to get composed characaters where no
+   more effective.
+ 
+ A number of attempt to extend the ASCII character set where done first
+ by hardware manufacturer. IBM - when introducing the first PC comewith 
+ an 8 bit char-set having 256 symbols matching the ASCII ones form  32
+ to 126 and adding some accented letters, some mathematical symbols,
+ some semi-graphics.  all of those some-s where a result of compromise 
+ that -in fact - didn't matcheveryone's  needs. it jus tattempt to satisfy
+ 90 parsent of the user o 90 persent of the IBM served countries at the 
+ time. but it fitted 8 bits.
+
+ The incomming of Code-pages...........
+ To Better solve the problem, the concept of Code-page was introduced.
+ Essentially the correspondence between code andglyphswas made configurable
+
+ again 
+
+ The Correspondence between CODE and Glyphs WAS MADE CONFIGURABLE.
+
+ So that every countruy  could configure the 2nd half of the char-set with
+ the characters that it more needed. interoperability was assured only the
+ first 128 codes.
+
+
+ Later DOS versions and earlier Windows, used the 8 bit ANSI code, with a
+ number of codepage for a variety of "editions".
+
+ The drawback of this method was that was essentially impossible to hold
+ text MIXING different Very heterogeneous language mixing up Arabic and 
+ Japanese was practically impossible.
+ and reading a French text with an arabic PC was sometimes a pleasure,and
+ evern French to Italian leaded to strage mis-writings due to the fact that
+ some accedn characters had different coding
+ also , a problem was still present with languagesthat require more that
+ 18 specific symbols ( think to Chinese); for them multi-byte code-pages 
+ has beenintroduced giving MBCS.
+
+ UNICODE:
+ Unicode was introduced mainly to try to cleanup all of this mess:
+ assuming that the world cannot fit into 8 bits, 
+ it gave a sidtinct ID to every encoded symbole. This is known as UCS
+
+ Universal Character Set. 
+ In its first definition it was containing less than 65536 characters,
+ ( 2byte ) and thismade many software developer confident that 16bits where
+ enough to represent them all. This is known as UCS-2.
+ The acutal sisutation sees an UCS defineup to 0x10FFFF (although with many
+ still unassignedelements),thus requireing 21bits.
+
+ UCS-4 (4 bytes ) using unsigned int ( often typedef-ined as dchar_t ) as
+ characgters certainly fits everything,but for many languages it is a
+ wasting of space. also, may commucication channel drive bytes, not short
+ or int, and the way bytes are orderd into shorts adn ints depends onthe
+ architecutres of processorsandmachines, hence a pur binary dump ofdchars
+ or wchars is nOT practicable for files that  are designed to communication
+ or interoperation betwendifferent machines or devices.
+
+ Popular Unicodeencodings.
+ To track the above problems,a number of encodign, attempting to keep safe
+ the interoperability with legacy environments have been deployed for 7,
+ 8, 16 and 32bit environments.
+ In particular, with the windows environments, where Unicode was originally
+ deployed as UCS-2 (16bits) and communications are stilll working on byts,
+ the 8 bits and 16 bits are particularly useful and comfortable.
+
+ These encodings are known as UTF-8 and UTF-16
+
+ The first is important in files, where  an interchangeability with non
+ windows environments is required. since it does not depend on machine
+ endiannes. 
+ The second is important since it replaced USC-2 inside the WIn32 APIs
+ thus granting support also for character not fitting the first 65536 
+ codes by usign a multi-word scheme. ( note taht UCS-2 and UTF-16 are not 
+ the same: They coincide only for the first 65536-2048 codep-points)
+
+ Windows and Unicode:
+ The Windows operating system evolved from original IBM character set 
+ ( or better, OEM char-set, since different manufacturer may have different
+ iated ) towards the ANSI char-set and codepages.
+
+
+ This refers to 8 bit characters and language-dependent encodings and  was
+ used mainly in Win16. with the incomming of Win32, Unicode was adopted
+ first as pure UCS-2, and then extended to support UTF-16 surrogates.
+
+ The API binaries that manipulate character where doubled and renamed by a
+ dding an "A" for ANSI and W for Wide. the first taking chars based parame
+ ers adn the secoundtaking wchar_t based paramters.
+ A number of preprocessor "magics" are thendefined in<tchar.h> where, depen
+ ding on te UNICODE and MBCS preprocessor symbols the  traditional apiname
+  are mapped in to the corresponding A or W
+
+WINDOWS and LOCALIZATIOn
+To take care of the difference various countries and cultures may have in
+representing numbers, dates, currency etc. Windows introduced the concept
+of LOCALE as a set of informations that can be retrieved by APIs and
+that can be user customizable, to help programs to adapt to user habitudes.
+
+
+
+All thouse information are stored in the system registory.
+THe os provides a set of default value for thevarious countries, but 
+users canoverride them by providing their own specifications.
+
+Indise Windwos UTF8 to 16 and 16 to 8 conversions are possible through
+the WideCharToMultiByte() and MultiByteTOWideChar functions,by specifying
+CP_UTF8 as the codepage parameter.
+IT SI ANYWAY A STRING=TO=STRING CONVERSION, not an encoding/decode of a
+stream!!!!!
+
+
+C and Unicode
+C language completely pre-detes either Unicode and Windows,and in fact does
+not provide any direct support for Unicode, but a number of library 
+function had been adapted to take care of internationalization.
+
+IN this environment, a number of character oriented functions like atof
+gained their corespondent _wtof and -with the same preprocessor magic of
+ <tchar.h> a _ttof is defined as one or the other depending on the defini
+ tionof a UNICODE or MBCS symbol. 
+ What char and wchar_t effectively represent depends on the code-page used
+ that in turn with a locale defines theway numbers and represented and
+ how characters are encoded. Unfortunately, the way C library is implementd
+ defines localecharacteristics based on a set of static data, selectable 
+ with a set_locale function.
+ Such data has nothing to deal with the ones provided by the OS concept of
+ LOCALE and are not "user customizable" ( think to the caseof thousand 
+ separator, replaced by an+. there is however the possibility to convert
+ an UTF-8 stringinto UTF-16 with thembcstows function, specifying a locale
+ having a UTF-8 codepage.
+
+ C++and UNicode
+ C++ approach to i/o is based on the stream concept. Howstreamsrelates to
+ files it is not so obvious since the stl documentation, does not provide
+ a plain description on that. YOU have to read about a number of details
+ of a variety of classes before having a clue about what architecture is 
+ behind.
+
+ So, let's go in the detail as much is sufficient  to understand where is 
+  the clue.
+
+  Streams buffers and locales
+
+  This classes have a collaborative role in playing input and output.
+
+  * Streamsare responsible to provide the interface for insertion and
+   extraction operators and formatting manipulators.
+  * Buffers andresponsibleto provide the transit storage for the elements
+    that are read and writtenfrom the external source and to manage such 
+	reading and writing.
+  * Locale provides the functionality to handle "REPRESNTATION" and "CONVE
+    RSION". they do so by a number of "facets" that deals with the
+	vonversionof nmbers into character strings( withthenumget and numput
+	facets) and of thetranslation of characters from the prgram representa
+	tion form and to the external representation (with the codecvt facet)
+
+ All that is a set of family of classes that manage different character 
+ prepresentaions ( char ro wchar_t ) and differnt nature of external 
+ streams (file or string).
+
+ All streams must hold a buffer derived form basestreambuf<.> and 
+ locale, initialized by default as the C++ global locale (
+ initialized in turn as the classic "C" locale).
+
+ In particular file streams are noting more than basic streams 
+ initialized with a basic_filebuf<.>, that override the 
+ basic_streambuf<.> virsutal function to manage file i/o, plus some
+ pass-through function like open, close etc.
+ Similarly, string streams are basic streams initialized with basicstringbuf
+  
+  The template parameters defines the type of elements used by the stream
+  internally to the program. in windows environments they are normally 
+  char for ANSI oriented character representation and to wcharT for 
+  Unicode ( UTF-16) orientedrepresentation.
+
+  But something strange happens with file stream try its.
+ I 
+  That's ansi, with the text that appear truncated by the Euro symbol
+  and fs.good() is false
+
+ This means that a Unicodes string will be converted to an ANSI string
+ (before it is writtento theinternal buffer. To store Unicode string
+ in buffer, create new buffer of type wchar_t and set it useng the basic
+ _streambuf::pubsetfub()method. To see an example that demonstrates thsi
+ behavio, seebelow.
+
+ In essence, it seems nobody wans to say clearly that outputs going to 
+ file ( yes, old C file, tha's what basic_filebuf writes to and read from
+ there no magic behind that ) by default is always attempted to be 
+  converted into chars using the actual global locale facets.
+
+  In VC8 this happens with std::codevct<wchat_t,char,mbstate_t> facet that's
+   part of the default global locale,operatingonaninternal char buffer,
+   In mingw no such facet is declared, and hence the locale cannot provide 
+   it. (hence the exception)
+
+   and that'S the key to go towards UTF8 let's provide to the basic_filebuf
+   the facet it wants. Not another facet, with proper type and id,
+   ( locales can support whatever number of "facets") since that's not what the buffer class is seeking for. We have to derive the proper std::
+   codecvt<wchar_t,char,mbstat_t> and where no such type is definde we have
+    to defineit.
+
+
+	That'S unicode represented by UTF16 in LE form. now look the output 
+	ifle content with and hex editor you should get that .
+	THat's ansi, with the text that appear truncated by the Euro Symbol
+
+
+ 2012/02/28 
+ We often speak inaccurately of character set:
+  We may refer to a "Greek Character Set" or 
+                    "Latin Character Set".
+
+ BUT, in order to understand how differenct writing systems are
+ supported by Windows,We need to be more precis about character
+
+ User don't view or print character: A user views or prints GLYPHS.
+ A glyph is a representation ofa character. The character "Capital Letter
+ A" is represented by theglyph "A"intimesNew Roman Bold and "A" in Arai 
+ Bold. A font is a collection of glyphs.
+
+
+  Font --------* Glyphs
+
+
+  Windows is able to retrieve the appropriate glyphs by using mapping 
+  information about the keyboard, the language system inuse, a the 
+  glyphs associated with each character.
+
+
+  Font ---------* Glyphs 1 ------------- 1 Character
+
+
+  Fonts are designed with character sets in mind: A font for use 
+  in Russia will include glyphs representing Cyrillic Characters.
+  There is no magic word or blessing uttered to create a "character set".
+  A character set is only a Collection of Characters.
+
+  FONT ----- * GLYPH 1 ======= 1 CHARACTER * ------ CHARACTERSET
+
+  However, characters form different languages system are conventionally 
+  divided into differenct "Character Sets", primarily Because,
+  in the past, a limited number of Characters could be addressed "at any
+  one time.
+
+
+  Glyphs can also represent combinations of Characters and alternate forms
+  of charactersthere is NOT a strict one - to - one correspondence 
+  between glyphs and characters. For example, two characters may be
+  typed in a document, BUT  represented by only  a sigle glyph 
+  a ligature glyph). COnversely, Differenct versions of a character may
+  appear at the beginning, middle,or ending of a word.Thus a signle Charac
+  ter can be represented by Sereral different glyphs in a font.
+
+  Characters are represented by character codes.
+  Character codes are generated and stored when a user inputs a document.
+  Single-Byte Charcter sets (SBCS) provede 256 character code.
+  This is an adequate number to encode most of the characters needed for
+  Western Europe. For example, the Windows Extended ANSI character set 
+  contains 256 characters consisting of Latin Letters, Arabic Numbers
+  punctuation,and drawingcharacterrs.
+ 2012/02/28 
+ What is the sizeof boolean variable.
+ does it actually use only one BIT??
+ If not Why not?
+
+ You got it. Just One bit. basically you only need it to hold 2 values,
+  0 for false, true for anything else.
+
+  The minimum size for a variable is 1 byte.
+  1 bit booleans could be created in a bit filed 
+  sizeof() returnthe size inbyte.
+
+  The reason why the minimum size of a variable is 1 byte
+  it has to do with the way computers access memory.
+  There is no way of reserving just a singlebitof memory for a variable.
+  You might say memory is accessed with a resolution of eight bits.
+  I believe even the  one bit boolean created using a bit field as 
+  mentioned by Bazzy would require a complete byte to store.
+2012/02/25 
+ 
+
+ SHISAN 	SHIKIN
+  447G		447G
+                 116G ( Riekijyouyokin ) 196G (Fusai)   1
+				                         251G (SHihon)  1.3
+             JIKOSHIKINHIRITSU: 56%
+
+ HIYOU      RIEKI
+ 636G        639G
+
+  TOUKIJYUNRIEKI 6G (1%)
+  URIAGEGENKA ( 64% )
+  HANKANHI    ( 33% )
+
+			 
+
+
+2012/02/25 
+ LET
+ MAKE
+ HAVE
+ GET
+
+ LET         HAVE           MAKE	
+                 v
+				 adj
+				 pp
+				 ing
+             GET
+			     to-v
+				 adj
+				 pp
+				 ing
+
+
+2012/02/21 
+ Hope 
+ Wish
+  
+   I wish I had more money.
+
+  What is the difference between HOPE and WISH??
+
+   + Use "HOPE" when there is hope ( a chance ) for something to happen.
+   + Use "WISH" in situation, which are imagined.
+
+   There is NO negative meaning attached to wish, and 
+            NO positive meaning attached to hope
+2012/02/16 
+ Project Risk Management
+  + current perceptions
+  + emerging trend of various software risk management practives
+     ----> reviewed.
+  * risks --> identified.
+
+
+   Implementing project risk management will succeed by 
+     --------------------> changing the organizational culture
+
+
+	 organizational culture -----> risk management
+
+
+
+
+
+	 Project failures <----- risk inherent in software environment.
+	                          + create software has never been done.
+							  * process es are similar among projects 
+
+
+		dismal track -record of cost
+		schedule overruns
+		quality and usability problems
+
+		budget
+		user satisfactions
+		system performance
+
+		+15-------35+  : cancelled outright
+		+              : schedule slippage
+		               : cost overruns
+					   : failure to meet their project goals
+
+	    risk:
+		    high turnover rate *****
+			organizational issues
+
+
+
+
+ We have evolved such that owning up to risks is often confused with 
+ defeatism.
+
+
+ "shoot the messenger" : often discourages people from bringing 
+ imminent problems to the attention of management.
+ This attitude is the result of misunderstanding of risk.
+
+
+     risk management -----? extra work ?
+	                      ? expense    ?
+
+
+	risk indicator!
+
+	high risk <==== explicit early concern
+	          reduced
+								
+2012/02/11 
+
+ The following tutorials guide you through the process of using the 
+ C/C++ Development Toolkit to some steps.
+
+ Editor - controltheappearance of text highlighting
+ Use the Editor preference panel to control the appearance of text
+ highlightig in C/C++ editrs
+
+ Editor Preference Options;
+ Smart caret positioning in identifiers.
+
+ Documentation tool comments : Specifies which documentation tool
+                               should be used to determine editor
+							   presentation and behaviors.
+							   This enables editor features suchas
+							   content-assist,documentationcommend 
+							   generation and syntax highlighting.
+							   The particular tool selected here
+							   will be used for files that are not
+							   associated with a project,
+							   or where noproject level preference
+							   has been set.
+ Content Assist panel to customize the content Assist feature in
+ C/C++ editors
+
+ Completion Proposal Fileter Completion proposal fileters may 
+ have been supplied with your CDT distribution. 
+ Completion proposal fileters cansort and order the proposals
+ provided by the Content Assist feature to best suit your needs.
+ Select the desired content assist filter from the list of available
+ filters.
+
+ Save Actions preference pnael to configure actions performed 
+ by the C/C++ editor while saving a file.
+
+ Syntax Coloring preferences
+ Use the Syntax Coloringpreference panel to specify how C/C++ source
+ code is rendered. Each element category (COde, Comments, and Preprocessor)
+ contains a list of language elements that may be rendered with its own
+ color and style. NOTE that general text editor settings such as the 
+ background color can be confiured on the general Text Editors preference
+ pages. Fonts may be configured on the general Colors and Fonts preference
+ page.
+
+ Code templates:
+ The Code Templates preference panel lets you configure the format of 
+ newly generated code stubs, comments and files.
+
+ The code templates page contains templates that are used by actions
+ that generate code and/or source files. E.g. the New Class wizard uses
+ source and header file templates to create new files and code templates
+ to insert generated methodstubs.
+
+Typing preferences:
+ Use the Typing preference panel to assist in formatting input as you type.
+
+
+ /*------------------------------------*/
+ Tutorial: Creating a simple applicaiton
+  in this tutorial, you will use the CDT to create a simple 'hello world'
+  application. This tutorial describes the process of creating a new C++
+  project where the build is automatically managed by the CDT.
+  and running the program.
+
+  IN earlier versions of the CDT, there were two separate project types:
+  Managed make (automatically generated a makefile) and Standard make
+
+   Managed make  ( automatically generated a makefile    )
+   Standard make ( required the user's makefile to build )
+
+  To create a simple 'hello world' applicaiton using CDT,
+  preform the following general steps:
+
+   1. Creating a project.
+   2. REviewing the code and building the project
+   3. Running the application.
+
+
+select File > new > project.
+select the type of project to create.
+for this tutorial, expand the c++ folder and select C++ project and
+click next. The C++ project wizard opens.
+By default, the CDT fileters the Toolchain and Project thes that it
+displays in those lists based on the language support for the C++ Project
+wizard you selected for this tutorial.
+
+IN the project name field, type a name for the project, such as helloworld
+c;; Project. This project type provides a simple hello applicaiton in C++
+and the makefile is automatically created by the CDT.
+Select a required toolchain from the Toolchain list.
+
+A toolchain is a set of tools ( such as a compile, linker and assembler)
+intended to build your project. Additional tools, such as a debugger,
+can be associated with a toolchain. There can be several toolchains 
+available, depending onthe compilers installed on your system.
+Click nExt
+
+Specify the Basic Properties for the new project, such as your author
+copyright and source information then click next.
+
+The Select Configurations page displays a list of configurations based
+on the project type and toolchains selected earlier.
+
+OPTIONAL:
+if you want to change the default project settins.
+Click Advanced Setting to open the Project Properties dialog for your 
+new project allowing you change any of the project specific settings,
+such as includes paths,, compiler options andlibraries.
+
+Click Finish.
+
+/*---------------*/
+Note if the C++ perspective is not currently set as the defualt,
+you are prompted to determined if you would like to this project
+to be associated with the C/C++ perspective Click Yes.
+
+A project is created with the default settings and a full set 
+of configurations based on the project type and toolchain you selected.
+you should now see the new project in Project Explorer view.
+
+Reviewing the code and building the porjct
+From the Project Explorer view, double-click the .cpp file created
+fro your project, for example, helloworld.cpp You will find it within
+the project "src" folder.
+
+This file opens in a default editor.
+It contains C++ template code for the Hello World example project
+you selected earlier. in addition, the outline view has also been 
+populated with objects created from your code.
+
+Note  you can specify a different eidtor, and add or modify existing code
+templates in Windows >  Preferences.
+
+Optional: You can type additional code in this file, and then save the
+changes by clicking  File > Save or pressing CTRL+S.
+NExt you will need to build your project before you can run it.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2012/02/11 
+ The standarCDT 
+         ===========support GNU toolchain.
+		                         make
+								 gcc compiler
+								 gdb debugger
+
+	Each platform that runs the CDT requires differenct steps
+	to acquire this TOOLCHAIN.
+
+	 WINDOWS:
+	  MINGW/CYgwin are the thow main platform choices for acquiring the
+	  GNU toolchain. It is important to understand the difference
+	  between them. Cygwin produces executables that use the Cygwin
+	  POSIX runtime. Note that thisruntime is GPL licensed.
+	  MinGW produces procudes native Windows Executables that do not
+	  require a separate runtime.
+
+	   For MinGW,it is recommended to use the MINGW installer,
+	   mingw-get, to manage your MinGW installation.
+	   Download andrun thelatestmingw-get-inst package from the 
+	   MinGW Downloads page. The CDT MinGW toolchain will find
+	   this install if it is located in the default C:\MinGW
+	   directory, the MinGW bin directory is placed in your path,
+	   or if the MinGW locationis storedinthe MINGW_HOME environment
+	   variable. Note that theWascaan IDE has been discontinued.
+
+	    CDT find MINGW if it is located in the default 
+		               if it is placed in your path
+					   if the MinGW location is stored in MINGW_HOME
+
+     Cygwin:
+	 Windows SDK:
+	    proides the Visual C++ compiler and header files and libraries
+		required to create Windows applications. The CDT VisualC++
+		build integration will find these files based on where you
+		installed the SDK. No other set up isrequired.
+
+		NOTE* THis release, the integration should be considerd
+		bata quality. It is not recommended for production use.
+
+
+2012/02/11 
+2012/02/11 
 2012/02/01 
  
        +-------------------------------------------------->
